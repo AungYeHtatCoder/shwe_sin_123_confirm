@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\User;
 
+use App\Models\Admin\Promotion;
 use App\Models\User;
 use GuzzleHttp\Client;
 use App\Models\Admin\Banner;
@@ -169,13 +170,15 @@ class WelcomeController extends Controller
 
     public function promotion()
     {
-        return view('frontend.promotion');
+        $promotions = Promotion::latest()->get();
+        return view('frontend.promotion', compact('promotions'));
     }
 
     //promotionDetail
-    public function promotionDetail()
+    public function promotionDetail($id)
     {
-        return view('frontend.promotion-detail');
+        $promotion = Promotion::find($id);
+        return view('frontend.promotion-detail', compact('promotion'));
     }
 
     public function servicePage()
