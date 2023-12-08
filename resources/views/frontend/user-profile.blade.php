@@ -52,7 +52,7 @@
             <p class="text-center text-white px-3 py-2 shadow" style="background-color: #c50408;color:#f5bd02;border:1px solid #ebc03c">တစ်နေ့တာ 2D ထိုး မှတ်တမ်း
             <span>
                 <a href="{{ url('/user/two-d-play-index')}}" style="color: #49da06; text-decoration:none">
-                        {{-- <strong>ထီထိုးရန် နိုပ်ပါ</strong> --}}
+                        <strong>ထီထိုးရန် နိုပ်ပါ</strong>
                     </a>
             </span>
             </p>
