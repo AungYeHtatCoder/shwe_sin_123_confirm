@@ -46,6 +46,21 @@
                   <p>ပိတ်ရက်</p>
                 </a>
               </div>
+              <div>
+                <p class="me-2" style="color: aqua"> 
+           {{ date('Y-m-d') }}
+           <br/> 
+          {{-- current time with clock --}}
+          <span id="clock" style="font-size: 20px; color:chartreuse"></span>
+          <script>
+            var myVar = setInterval(myTimer, 1000);
+            function myTimer() {
+              var d = new Date();
+              document.getElementById("clock").innerHTML = d.toLocaleTimeString();
+            }
+            </script>
+          </p>
+              </div>
             </div>
           </div>
       </div>
@@ -161,15 +176,15 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="modal-btn">
+        {{-- <div class="modal-btn">
           <a href="{{ url('/user/two-d-play-index-9am') }}" class="text-decoration-none btn">09:30 AM</a>
-        </div>
+        </div> --}}
         <div class="modal-btn mt-2">
           <a href="{{ url('/user/two-d-play-index-12pm') }}" class="text-decoration-none btn">12:01 PM</a>
         </div>
-        <div class="modal-btn mt-2">
+        {{-- <div class="modal-btn mt-2">
           <a href="{{ url('/user/two-d-play-index-2pm') }}" class="text-decoration-none btn">02:00 PM</a>
-        </div>
+        </div> --}}
         <div class="modal-btn mt-2 mb-4">
           <a href="{{ url('/user/two-d-play-index-4pm') }}" class="text-decoration-none btn">04:30 PM</a>
         </div>

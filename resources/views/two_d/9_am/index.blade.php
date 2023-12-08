@@ -198,7 +198,7 @@
   updateDateTimeDisplay();
 
   // Set interval to update the display every minute
-  setInterval(updateDateTimeDisplay, 60000);
+  setInterval(updateDateTimeDisplay, 1000);
 </script>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
