@@ -62,46 +62,40 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
             <img
-                src="{{ asset('user_app/assets/images/banner/banner6551a36c29352.png') }}"
+                src="{{ asset('user_app/assets/images/shwe_sin_1.jpg') }}"
                 style="max-height: 500px"
                 class="d-block w-100"
                 alt="..."
             />
             <div class="marquee">
                 <div class="marquee-text">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Dolorem ea id exercitationem. Quos consequuntur vitae
-                soluta aliquid odit temporibus beatae iste autem?
+                2D 3D ကိုငွေကြေးယုံကြည်စိတ်ချစွာဖြင့် ငွေသွင်းငွေထုတ်လွယ်ကူစွာ ကံစမ်းနိုင်ပါသည်
                 </div>
             </div>
             </div>
             <div class="carousel-item">
             <img
-                src="{{ asset('user_app/assets/images/banner/banner6551a35f3f8a0.png') }}"
+                src="{{ asset('user_app/assets/images/shwe_sin_2.jpg') }}"
                 style="max-height: 500px"
                 class="d-block w-100"
                 alt="..."
             />
             <div class="marquee">
                 <div class="marquee-text">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Dolorem ea id exercitationem. Quos consequuntur vitae
-                soluta aliquid odit temporibus beatae iste autem?
+                2D 3D ကိုငွေကြေးယုံကြည်စိတ်ချစွာဖြင့် ငွေသွင်းငွေထုတ်လွယ်ကူစွာ ကံစမ်းနိုင်ပါသည်
                 </div>
             </div>
             </div>
             <div class="carousel-item">
             <img
-                src="{{ asset('user_app/assets/images/banner/banner6551a3505d2c9.png') }}"
+                src="{{ asset('user_app/assets/images/shwe_sin_2.jpg') }}"
                 style="max-height: 500px"
                 class="d-block w-100"
                 alt="..."
             />
             <div class="marquee">
                 <div class="marquee-text">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Dolorem ea id exercitationem. Quos consequuntur vitae
-                soluta aliquid odit temporibus beatae iste autem?
+               2D 3D ကိုငွေကြေးယုံကြည်စိတ်ချစွာဖြင့် ငွေသွင်းငွေထုတ်လွယ်ကူစွာ ကံစမ်းနိုင်ပါသည်
                 </div>
             </div>
             </div>
