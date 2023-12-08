@@ -67,17 +67,10 @@
             @endif
 
             <div class="d-flex justify-content-between text-success">
-                <div id="morningnine" class="text-center w-100 shadow-sm rounded pt-3 border border-1 border-warning" style="background:#c50408;cursor: pointer;">
-                    <i class="fas fa-list d-block fa-2x"></i>
-                    <p style="color: #f5bd02">09:30 AM</p>
-                </div>
+                
                 <div id="morning" class="text-center w-100 rounded pt-3" style="background:#c50408;cursor: pointer;">
                     <i class="fas fa-list d-block fa-2x"></i>
                     <p style="color: #f5bd02">12:00 PM</p>
-                </div>
-                <div id="eveningtwo" class="text-center w-100 rounded pt-3" style="background:#c50408;cursor: pointer;">
-                    <i class="fas fa-list d-block fa-2x"></i>
-                    <p style="color: #f5bd02">02:00 PM</p>
                 </div>
                 <div id="evening" class="text-center w-100 rounded pt-3" style="background:#c50408;cursor: pointer;">
                     <i class="fas fa-list d-block fa-2x"></i>
@@ -101,49 +94,14 @@
                 </div>
             </div>
 
-            {{-- 9:30 AM Start --}}
-            <div class="morningnine my-4">
-                @if ($earlymorningDigits)
-                <div class="mb-3 d-flex justify-content-around  text-white shadow p-2 rounded">
-                    <table class="table table-dark">
-                        <thead>
-                            <tr>
-                                <th>စဉ်</th>
-                                <th>ဂဏန်း</th>
-                                <th>ထိုးကြေး</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($earlymorningDigits['two_digits'] as $index => $digit)
-                            <tr>
-                                <td>{{ $index + 1 }}</td>
-                                <td>{{ $digit->two_digit }}</td>
-                                <td>{{ $digit->pivot->sub_amount }}</td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-
-            </div>
-            @endif
-
-            <div class="mb-3 d-flex justify-content-around text-white p-2 rounded shadow" style="background: #c50408;">
-                <p class="text-right pt-1" style="color: #f5bd02">Total Amount for 09:30AM: ||&nbsp; &nbsp; စုစုပေါင်းထိုးကြေး
-                    <strong>{{ $earlymorningDigits['total_amount'] }} MMK</strong>
-                </p>
-            </div>
-
-        </div>
-        {{-- 9:30 End --}}
+            
 
             {{-- 12:00 PM Start --}}
 
         <div class="morning d-none my-4">
             @if ($morningDigits)
-
-
-                    <div class="mb-3 d-flex justify-content-around text-white p-2 rounded shadow">
-                        <table class="table table-dark">
+                <div class="mb-3 d-flex justify-content-around text-white p-2 rounded shadow">
+                    <table class="table table-dark">
                         <thead>
                             <tr>
                                 <th>စဉ်</th>
@@ -161,8 +119,7 @@
                             @endforeach
                         </tbody>
                     </table>
-
-                    </div>
+                </div>
             @endif
 
             <div class="mb-3 d-flex justify-content-around text-white p-2 rounded shadow" style="background: #c50408">
@@ -174,47 +131,6 @@
 
         {{-- 12:00 PM End --}}
 
-        {{-- 2:00 PM Start --}}
-        <div class="eveningtwo d-none my-4">
-            @if(isset($earlyeveningDigit['two_digits']) && count($earlyeveningDigit['two_digits']) == 0)
-                <p class="text-center text-white px-3 py-2 mt-3" style="background-color: #c50408">
-                    ညနေပိုင်း ကံစမ်းထားသော ထီဂဏန်းများ မရှိသေးပါ
-                    <span>
-                        <a href="{{ route('admin.GetTwoDigit')}}" style="color: #f5bd02; text-decoration:none">
-                            <strong>ထီးထိုးရန် နိုပ်ပါ</strong></a>
-                    </span>
-                </p>
-            @endif
-                <div class="mb-3 d-flex justify-content-around text-white p-2 rounded shadow">
-                    <table class="table table-dark">
-                        <thead>
-                            <tr>
-                                <th>စဉ်</th>
-                                <th>ဂဏန်း</th>
-                                <th>ထိုးကြေး</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($earlyeveningDigit['two_digits'] as $index => $digit)
-                            <tr>
-                                <td>{{ $index + 1 }}</td>
-                                <td>{{ $digit->two_digit }}</td>
-                                <td>{{ $digit->pivot->sub_amount }}</td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
-
-            <div class="mb-3 d-flex justify-content-around text-white p-2 rounded shadow" style="background-color: #c50408">
-                <p class="text-right" style="color: #f5bd02">Total Amount for 02:00PM : ||&nbsp; &nbsp; စုစုပေါင်းထိုးကြေး
-                    <strong>{{ $earlyeveningDigit['total_amount'] }} MMK</strong>
-                </p>
-            </div>
-
-        </div>
-
-        {{-- 2:00 PM End --}}
 
         {{-- 4:30 PM Start --}}
 
@@ -224,31 +140,31 @@
                     ညနေပိုင်း ကံစမ်းထားသော ထီဂဏန်းများ မရှိသေးပါ
                     <span>
                         <a href="{{ route('admin.GetTwoDigit')}}" style="color: #f5bd02; text-decoration:none">
-                            <strong>ထီးထိုးရန် နိုပ်ပါ</strong></a>
+                            <strong>ထီးထိုးရန် နှိပ်ပါ</strong></a>
                     </span>
                 </p>
             @endif
 
-                <div class="mb-3 d-flex justify-content-around text-white p-2 rounded shadow">
-                    <table class="table table-dark">
-                        <thead>
-                            <tr>
-                                <th>စဉ်</th>
-                                <th>ဂဏန်း</th>
-                                <th>ထိုးကြေး</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($eveningDigits['two_digits'] as $index => $digit)
-                            <tr>
-                                <td>{{ $index + 1 }}</td>
-                                <td>{{ $digit->two_digit }}</td>
-                                <td>{{ $digit->pivot->sub_amount }}</td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
+            <div class="mb-3 d-flex justify-content-around text-white p-2 rounded shadow">
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th>စဉ်</th>
+                            <th>ဂဏန်း</th>
+                            <th>ထိုးကြေး</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($eveningDigits['two_digits'] as $index => $digit)
+                        <tr>
+                            <td>{{ $index + 1 }}</td>
+                            <td>{{ $digit->two_digit }}</td>
+                            <td>{{ $digit->pivot->sub_amount }}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
 
             <div class="mb-3 d-flex justify-content-around text-white p-2 rounded shadow" style="background:#c50408;">
                 <p class="text-right" style="color: #f5bd02">Total Amount for 04:30PM : ||&nbsp; &nbsp; စုစုပေါင်းထိုးကြေး
@@ -256,10 +172,9 @@
                 </p>
             </div>
 
-            </div>
+        </div>
 
         {{-- 4:30 PM End --}}
-
 
     </div>
 </div>
@@ -382,71 +297,16 @@
         $('#morning').addClass('border');
         $('#morning').addClass('border-1');
         $('#morning').addClass('border-warning');
-        $('#morningnine').removeClass('shadow-sm');
-        $('#morningnine').removeClass('border');
-        $('#morningnine').removeClass('border-1');
-        $('#morningnine').removeClass('border-warning');
-        $('#eveningtwo').removeClass('shadow-sm');
-        $('#eveningtwo').removeClass('border');
-        $('#eveningtwo').removeClass('border-1');
-        $('#eveningtwo').removeClass('border-warning');
         $('#evening').removeClass('shadow-sm');
         $('#evening').removeClass('border');
         $('#evening').removeClass('border-1');
         $('#evening').removeClass('border-warning');
 
         $('.morning').removeClass('d-none');
-        $('.morningnine').addClass('d-none');
-        $('.eveningtwo').addClass('d-none');
         $('.evening').addClass('d-none');
     });
-    $('#morningnine').click(function() {
-        $('#morningnine').addClass('shadow-sm');
-        $('#morningnine').addClass('border');
-        $('#morningnine').addClass('border-1');
-        $('#morningnine').addClass('border-warning');
-        $('#morning').removeClass('shadow-sm');
-        $('#morning').removeClass('border');
-        $('#morning').removeClass('border-1');
-        $('#morning').removeClass('border-warning');
-        $('#eveningtwo').removeClass('shadow-sm');
-        $('#eveningtwo').removeClass('border');
-        $('#eveningtwo').removeClass('border-1');
-        $('#eveningtwo').removeClass('border-warning');
-        $('#evening').removeClass('shadow-sm');
-        $('#evening').removeClass('border');
-        $('#evening').removeClass('border-1');
-        $('#evening').removeClass('border-warning');
 
-        $('.morningnine').removeClass('d-none');
-        $('.morning').addClass('d-none');
-        $('.eveningtwo').addClass('d-none');
-        $('.evening').addClass('d-none');
-    });
-    $('#eveningtwo').click(function() {
-        $('#eveningtwo').addClass('shadow-sm');
-        $('#eveningtwo').addClass('border');
-        $('#eveningtwo').addClass('border-1');
-        $('#eveningtwo').addClass('border-warning');
-        $('#morning').removeClass('shadow-sm');
-        $('#morning').removeClass('border');
-        $('#morning').removeClass('border-1');
-        $('#morning').removeClass('border-warning');
-        $('#morningnine').removeClass('shadow-sm');
-        $('#morningnine').removeClass('border');
-        $('#morningnine').removeClass('border-1');
-        $('#morningnine').removeClass('border-warning');
-        $('#evening').removeClass('shadow-sm');
-        $('#evening').removeClass('border');
-        $('#evening').removeClass('border-1');
-        $('#evening').removeClass('border-warning');
 
-        $('.eveningtwo').removeClass('d-none');
-        $('.morning').addClass('d-none');
-        $('.morningnine').addClass('d-none');
-        $('.evening').addClass('d-none');
-
-    });
 
     $('#evening').click(function() {
         $('#evening').addClass('shadow-sm');
@@ -457,19 +317,9 @@
         $('#morning').removeClass('border');
         $('#morning').removeClass('border-1');
         $('#morning').removeClass('border-warning');
-        $('#morningnine').removeClass('shadow-sm');
-        $('#morningnine').removeClass('border');
-        $('#morningnine').removeClass('border-1');
-        $('#morningnine').removeClass('border-warning');
-        $('#eveningtwo').removeClass('shadow-sm');
-        $('#eveningtwo').removeClass('border');
-        $('#eveningtwo').removeClass('border-1');
-        $('#eveningtwo').removeClass('border-warning');
-
         $('.evening').removeClass('d-none');
         $('.morning').addClass('d-none');
-        $('.morningnine').addClass('d-none');
-        $('.eveningtwo').addClass('d-none');
+
     });
 </script>
 @endsection
