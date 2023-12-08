@@ -38,7 +38,7 @@ class TwoDWinnerController extends Controller
     public function store(Request $request)
     {
         //
-    $currentSession = date('H') < 12 ? 'morning' : 'evening';  // before 1 pm is morning
+    $currentSession = date('H') < 13 ? 'morning' : 'evening';  // before 1 pm is morning
 
         TwodWiner::create([
             'prize_no' => $request->prize_no,

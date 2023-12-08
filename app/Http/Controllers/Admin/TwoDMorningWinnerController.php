@@ -32,7 +32,7 @@ class TwoDMorningWinnerController extends Controller
     $lotteries = Lottery::with('twoDigitsMorning')->get();
 
     $prize_no_morning = TwodWiner::whereDate('created_at', Carbon::today())
-                                 ->whereBetween('created_at', [Carbon::now()->startOfDay()->addHours(6), Carbon::now()->startOfDay()->addHours(12)])
+                                 ->whereBetween('created_at', [Carbon::now()->startOfDay()->addHours(6), Carbon::now()->startOfDay()->addHours(14)])
                                  ->orderBy('id', 'desc')
                                  ->first();
    
