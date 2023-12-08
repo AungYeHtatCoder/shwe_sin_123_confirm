@@ -103,7 +103,7 @@
 
             {{-- 9:30 AM Start --}}
             <div class="morningnine my-4">
-                @if ($earlymorningDigits)
+                @if ($morningDigits)
                 <div class="mb-3 d-flex justify-content-around  text-white shadow p-2 rounded">
                     <table class="table table-dark">
                         <thead>
@@ -114,7 +114,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($earlymorningDigits['two_digits'] as $index => $digit)
+                            @foreach ($morningDigits['two_digits'] as $index => $digit)
                             <tr>
                                 <td>{{ $index + 1 }}</td>
                                 <td>{{ $digit->two_digit }}</td>
@@ -129,7 +129,7 @@
 
             <div class="mb-3 d-flex justify-content-around text-white p-2 rounded shadow" style="background: #c50408;">
                 <p class="text-right pt-1" style="color: #f5bd02">Total Amount for 09:30AM: ||&nbsp; &nbsp; စုစုပေါင်းထိုးကြေး
-                    <strong>{{ $earlymorningDigits['total_amount'] }} MMK</strong>
+                    <strong>{{ $morningDigits['total_amount'] }} MMK</strong>
                 </p>
             </div>
 
