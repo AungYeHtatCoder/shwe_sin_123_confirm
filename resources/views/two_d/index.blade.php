@@ -21,9 +21,9 @@
         <div class="d-flex pt-2">
           <p class="fw-bold fs-6 pe-2 text-white">{{ Auth::user()->balance }}ကျပ်</p>
           <i class="material-icons">add_circle</i>
-        </div>                  
+        </div>
       </div>
-  
+
 
       <div class="card text-center mt-1" style="background-color: #c50408; border-radius: 10px;">
           <div class="card-body">
@@ -47,9 +47,9 @@
                 </a>
               </div>
               <div>
-                <p class="me-2" style="color: aqua"> 
+                <p class="me-2" style="color: aqua">
            {{ date('Y-m-d') }}
-           <br/> 
+           <br/>
           {{-- current time with clock --}}
           <span id="clock" style="font-size: 20px; color:chartreuse"></span>
           <script>
@@ -71,9 +71,9 @@
             Updated:
             <span>11-11-2023 4:31:59PM</span>
           </p>
-          
+
           <button type="button" class="btns" data-bs-toggle="modal" data-bs-target="#exampleModal">ထိုးမည်</button>
-          
+
       </div>
       <!-- content -->
 
@@ -98,7 +98,7 @@
               </div>
             </div>
           </div>
-          
+
           <div
             class="card text-center p-0 cards mt-3"
             style="background-color: #c50408; border: 2px solid #ebc03c; color: #ffffff; box-shadow: 2px 10px 8px 0 rgba(0, 0, 0, 0.2), 2px 10px 10px 0 rgba(0, 0, 0, 0.19)"
@@ -163,7 +163,7 @@
               </div>
             </div>
           </div>
-          
+
       </div>
     </div>
 </div>
@@ -176,17 +176,31 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        {{-- <div class="modal-btn">
-          <a href="{{ url('/user/two-d-play-index-9am') }}" class="text-decoration-none btn">09:30 AM</a>
-        </div> --}}
+        @php
+            use Carbon\Carbon;
+            $currentTime = Carbon::now();
+            $start9Time = Carbon::parse('9:30');
+            $end12Time = Carbon::parse('12:00');
+            $start12Time = Carbon::parse('12:00');
+            $end2Time = Carbon::parse('14:00');
+            $start2Time = Carbon::parse('14:00');
+            $end4Time = Carbon::parse('16:30');
+        @endphp
+
         <div class="modal-btn mt-2">
-          <a href="{{ url('/user/two-d-play-index-12pm') }}" class="text-decoration-none btn">12:01 PM</a>
+            @if ($currentTime->between($start9Time, $end12Time))
+            <a href="{{ url('/user/two-d-play-index-12pm') }}" class="text-decoration-none btn">12:01 PM</a>
+            @else
+            <a href="#" class="text-decoration-none btn">12:01 PM</a>
+            @endif
         </div>
-        {{-- <div class="modal-btn mt-2">
-          <a href="{{ url('/user/two-d-play-index-2pm') }}" class="text-decoration-none btn">02:00 PM</a>
-        </div> --}}
         <div class="modal-btn mt-2 mb-4">
-          <a href="{{ url('/user/two-d-play-index-4pm') }}" class="text-decoration-none btn">04:30 PM</a>
+            @if ($currentTime->between($start12Time, $end4Time))
+            <a href="{{ url('/user/two-d-play-index-4pm') }}" class="text-decoration-none btn">04:30 PM</a>
+            @else
+            <a href="#" class="text-decoration-none btn">04:30 PM</a>
+            {{-- <span class="btn w-100 text-center">04:30 PM</span> --}}
+            @endif
         </div>
       </div>
     </div>
