@@ -15,7 +15,7 @@ class ThreeDWinnerController extends Controller
         $lotteries = Lotto::with('threedDigitWinner')->get();
 
         $prize_no_morning = ThreeWinner::whereDate('created_at', Carbon::today())
-                                     ->whereBetween('created_at', [Carbon::now()->startOfDay()->addHours(10), Carbon::now()->startOfDay()->addHours(24)])
+                                     ->whereBetween('created_at', [Carbon::now()->startOfDay()->addHours(6), Carbon::now()->startOfDay()->addHours(24)])
                                      ->orderBy('id', 'desc')
                                      ->first();
        
