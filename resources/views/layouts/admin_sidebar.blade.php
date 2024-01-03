@@ -305,14 +305,14 @@
             </a>
           </li>
           @endcan
-          @can('user_access')
+          {{-- @can('user_access')
           <li class="nav-item ">
             <a class="nav-link text-white " href="{{ url('admin/get-two-d-early-morning-number') }}">
               <span class="sidenav-mini-icon"> MS </span>
               <span class="sidenav-normal  ms-2  ps-1"> 2D (9:30) MorningSession </span>
             </a>
           </li>
-          @endcan
+          @endcan --}}
           @can('user_access')
           <li class="nav-item ">
             <a class="nav-link text-white " href="{{ route('admin.tow-d-morning-number.index') }}">
@@ -321,14 +321,14 @@
             </a>
           </li>
           @endcan
-          @can('user_access')
+          {{-- @can('user_access')
           <li class="nav-item ">
             <a class="nav-link text-white " href="{{ url('admin/two-d-early-morning-winner') }}">
               <span class="sidenav-mini-icon"> EMW </span>
               <span class="sidenav-normal  ms-2  ps-1"> 2D (9:30) MorningWinner </span>
             </a>
           </li>
-          @endcan
+          @endcan --}}
           @can('user_access')
           <li class="nav-item ">
             <a class="nav-link text-white " href="{{ route('admin.morningWinner') }}">
@@ -337,14 +337,14 @@
             </a>
           </li>
           @endcan
-          @can('user_access')
+          {{-- @can('user_access')
           <li class="nav-item ">
             <a class="nav-link text-white " href="{{ url('admin/get-two-d-early-evening-number') }}">
               <span class="sidenav-mini-icon"> ES </span>
               <span class="sidenav-normal  ms-2  ps-1"> 2D (2:30) EveningSession </span>
             </a>
           </li>
-          @endcan
+          @endcan --}}
           @can('user_access')
           <li class="nav-item ">
             <a class="nav-link text-white " href="{{ route('admin.eveningNumber') }}">
@@ -353,14 +353,14 @@
             </a>
           </li>
           @endcan
-          @can('user_access')
+          {{-- @can('user_access')
           <li class="nav-item ">
             <a class="nav-link text-white " href="{{ url('admin/two-d-early-evening-winner') }}">
               <span class="sidenav-mini-icon"> EW </span>
               <span class="sidenav-normal  ms-2  ps-1"> 2D (2:30) EveningWinner </span>
             </a>
           </li>
-          @endcan
+          @endcan --}}
           @can('user_access')
           <li class="nav-item ">
             <a class="nav-link text-white " href="{{ route('admin.eveningWinner') }}">
@@ -431,24 +431,24 @@
       </a>
       <div class="collapse " id="productsExample">
        <ul class="nav nav-sm flex-column">
-        <li class="nav-item">
+        {{-- <li class="nav-item">
          <a class="nav-link text-white " href="{{ url('admin/get-two-d-early-morning-number-over-amount-limit')}}">
           <span class="sidenav-mini-icon"> 2D </span>
           <span class="sidenav-normal  ms-2  ps-1"> 9:30 OverLimit </span>
          </a>
-        </li>
+        </li> --}}
         <li class="nav-item">
          <a class="nav-link text-white " href="{{ url('admin/get-two-d-morning-number-over-amount-limit') }}">
           <span class="sidenav-mini-icon"> 2D </span>
           <span class="sidenav-normal  ms-2  ps-1"> 12:1 OverLimit </span>
          </a>
         </li>
-        <li class="nav-item">
+        {{-- <li class="nav-item">
          <a class="nav-link text-white " href="{{ url('admin/get-two-d-early-evening-number-over-amount-limit')}}">
           <span class="sidenav-mini-icon"> 2D </span>
           <span class="sidenav-normal  ms-2  ps-1"> 2 : OverLimit </span>
          </a>
-        </li>
+        </li> --}}
         <li class="nav-item">
          <a class="nav-link text-white " href="{{ url('admin/get-two-d-evening-number-over-amount-limit') }}">
           <span class="sidenav-mini-icon"> 2D </span>
@@ -458,7 +458,7 @@
        </ul>
       </div>
      </li>
-     <li class="nav-item ">
+     {{-- <li class="nav-item ">
       <a class="nav-link text-white " data-bs-toggle="collapse" aria-expanded="false" href="#ordersExample">
        <span class="sidenav-mini-icon"> O </span>
        <span class="sidenav-normal  ms-2  ps-1"> Orders <b class="caret"></b></span>
@@ -485,7 +485,7 @@
        <span class="sidenav-mini-icon"> R </span>
        <span class="sidenav-normal  ms-2  ps-1"> Referral </span>
       </a>
-     </li>
+     </li> --}}
     </ul>
    </div>
   </li>
@@ -539,7 +539,7 @@
        </ul>
       </div>
      </li>
-     <li class="nav-item ">
+     {{-- <li class="nav-item ">
       <a class="nav-link text-white " data-bs-toggle="collapse" aria-expanded="false" href="#ordersExample">
        <span class="sidenav-mini-icon"> O </span>
        <span class="sidenav-normal  ms-2  ps-1"> Orders <b class="caret"></b></span>
@@ -566,7 +566,7 @@
        <span class="sidenav-mini-icon"> R </span>
        <span class="sidenav-normal  ms-2  ps-1"> Referral </span>
       </a>
-     </li>
+     </li> --}}
     </ul>
    </div>
   </li>

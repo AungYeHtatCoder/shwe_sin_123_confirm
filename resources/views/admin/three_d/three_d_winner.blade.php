@@ -21,7 +21,7 @@
                 <div class="card-header pb-0">
                     <div class="d-lg-flex">
                         <div>
-                            <h5 class="mb-0">3D Winner Dashboards - 12PM-2:30PM
+                            <h5 class="mb-0">3D Winner Dashboards
                                 <span>
                                     <button type="button" class="btn btn-primary">
                                         @if ($prize_no_morning)

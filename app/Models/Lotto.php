@@ -48,7 +48,7 @@ class Lotto extends Model
 
     public function threedDigitWinner()
     {
-        $morningStart = Carbon::now()->startOfDay()->addHours(10);
+        $morningStart = Carbon::now()->startOfDay()->addHours(6);
         $morningEnd = Carbon::now()->startOfDay()->addHours(24);
         return $this->belongsToMany(ThreeDigit::class, 'lotto_three_digit_copy', 'lotto_id', 'three_digit_id')->withPivot('sub_amount', 'prize_sent', 'created_at')
                     ->wherePivotBetween('created_at', [$morningStart, $morningEnd]);
