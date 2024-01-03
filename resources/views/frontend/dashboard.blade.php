@@ -21,7 +21,13 @@
         <a href="{{ url('/user/two-d-winners-history') }}" class="text-decoration-none">
           <div class="d-flex list-card">
           <i class="fa-solid fa-language fs-3 ms-2"></i>
-          <p class="ps-3">ကံထူးရှင်များ</p>
+          <p class="ps-3">2D ကံထူးရှင်များ</p>
+          </div>
+        </a>
+         <a href="{{ url('/user/three-d-winners-history') }}" class="text-decoration-none">
+          <div class="d-flex list-card">
+          <i class="fa-solid fa-language fs-3 ms-2"></i>
+          <p class="ps-3">3D ကံထူးရှင်များ</p>
           </div>
         </a>
       <a href="{{ url('/twoDPrize') }}" class="text-decoration-none">

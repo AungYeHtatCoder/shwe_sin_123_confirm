@@ -63,18 +63,18 @@ class WelcomeController extends Controller
         //$twoDigits = TwoDigit::all();
         $client = new Client();
 
-        try {
-            $response = $client->request('GET', 'https://api.thaistock2d.com/live');
-            $data = json_decode($response->getBody(), true);
-        } catch (RequestException $e) {
-            // Log the error or inform the user
-            $data = []; // or provide a default value
-        }
-        if (request()->ajax()) {
-            return response()->json($data);
-        }
+        // try {
+        //     $response = $client->request('GET', 'https://api.thaistock2d.com/live');
+        //     $data = json_decode($response->getBody(), true);
+        // } catch (RequestException $e) {
+        //     // Log the error or inform the user
+        //     $data = []; // or provide a default value
+        // }
+        // if (request()->ajax()) {
+        //     return response()->json($data);
+        // }
 
-        return view('welcome', compact('data', 'banners'));
+        return view('welcome', compact('banners'));
 
 
 
