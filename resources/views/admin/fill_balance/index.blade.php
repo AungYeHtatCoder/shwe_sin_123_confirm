@@ -21,7 +21,7 @@
           </a>
         </div>
         <div class="d-flex">
-          <div class="dropdown d-inline">
+          {{-- <div class="dropdown d-inline">
             <a href="javascript:;" class="btn btn-outline-dark dropdown-toggle " data-bs-toggle="dropdown" id="navbarDropdownMenuLink2">
               Filters
             </a>
@@ -34,7 +34,7 @@
               </li>
               <li><a class="dropdown-item border-radius-md text-danger" href="javascript:;">Remove Filter</a></li>
             </ul>
-          </div>
+          </div> --}}
           <button class="btn btn-icon btn-outline-dark ms-2 export" data-type="csv" type="button">
             <i class="material-icons text-xs position-relative">archive</i>
             Export CSV
@@ -61,8 +61,9 @@
                     <th>Amount</th>
                     <th>PaymentNo</th>
                     <th>RecieveNo</th>
-                    <th>Show</th>
                     <th>SendBalance</th>
+                    <th>Show</th>
+                    <th>Send</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -81,7 +82,7 @@
                     </td>
 <td class="text-xs font-weight-normal">
     <div class="d-flex align-items-center">
-        @if($balance->status == 1)
+        @if($balance->status == 'accept')
             <button class="btn btn-icon-only btn-rounded btn-outline-success mb-0 me-2 btn-sm d-flex align-items-center justify-content-center">
                 <i class="material-icons text-sm" aria-hidden="true">done</i>
             </button>
@@ -145,13 +146,52 @@
                  @endforeach
 
                     </td>
-                    <td class="text-xs font-weight-normal">
+                   
+                  {{-- Update balance --}}
+<td class="text-xs font-weight-normal">
+  <div class="d-flex align-items-center">
+    {{-- Display button based on balance status --}}
+    @if($balance->status == 'accept')
+      <button class="btn btn-icon-only btn-rounded btn-outline-success mb-0 me-2 btn-sm d-flex align-items-center justify-content-center">
+        <i class="material-icons text-sm" aria-hidden="true">done</i>
+      </button>
+      <span>Accept</span>
+    @elseif($balance->status == 'reject')
+      <button class="btn btn-icon-only btn-rounded btn-outline-danger mb-0 me-2 btn-sm d-flex align-items-center justify-content-center">
+        <i class="material-icons text-sm" aria-hidden="true">close</i>
+      </button>
+      <span>Reject</span>
+    @else
+      <button class="btn btn-icon-only btn-rounded btn-outline-warning mb-0 me-2 btn-sm d-flex align-items-center justify-content-center">
+        <i class="material-icons text-sm" aria-hidden="true">hourglass_empty</i>
+      </button>
+      <span>Pending</span>
+    @endif
+    
+    {{-- Update status form --}}
+    <form action="{{ route('admin.FillBalanceUpdate', $balance->id) }}" method="post" class="d-flex align-items-center ml-3">
+      @csrf
+      @method('PUT')
+      {{-- amount hidden --}}
+      <input type="hidden" name="balance" value="{{ $balance->amount }}">
+      {{-- status select --}}
+      <select id="choices-category-edit" name="status" onchange="this.form.submit()">
+        <option value="pending" {{ $balance->status == 'pending' ? 'selected' : '' }}>Pending</option>
+        <option value="accept" {{ $balance->status == 'accept' ? 'selected' : '' }}>Accept</option>
+        {{-- <option value="reject" {{ $balance->status == 'reject' ? 'selected' : '' }}>Reject</option> --}}
+      </select>
+    </form>
+  </div>
+</td>
+{{-- Send balance --}}
+                      <td class="text-xs font-weight-normal">
                       {{-- go to show page --}}
                       <a href="{{ route('admin.fill-balance-replies.show', $balance->id) }}" class="btn btn-icon btn-outline-dark btn-sm">
                         <i class="material-icons">remove_red_eye</i>
                       </a>
                     </td>
-                    <td class="text-xs font-weight-normal">
+                    
+                      <td class="text-xs font-weight-normal">
                       {{-- go to send balance page --}}
                       <a href="{{ route('admin.fill-balance-replies.edit', $balance->id) }}" class="btn btn-icon btn-outline-dark btn-sm">
                         <i class="material-icons">send</i>

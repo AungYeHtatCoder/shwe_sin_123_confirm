@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Admin\FillBalance;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
 class FillBalanceReplyController extends Controller
@@ -57,10 +59,11 @@ class FillBalanceReplyController extends Controller
      */
     public function update(Request $request, $id)
 {
+    //dd($request->all());
     // 1. Validate the data
     $data = $request->validate([
         'balance' => 'required|numeric',
-        'status' => 'required|numeric', // Assuming you want to validate it as a number
+        'status' => 'required|in:pending,accept,reject',
     ]);
 
     // Retrieve the fill balance record
@@ -80,7 +83,49 @@ class FillBalanceReplyController extends Controller
     // Return or redirect as per your requirement
     return back()->with('success', 'Balance and Status updated successfully!');
 }
-    //  public function update(Request $request, $id)
+
+    public function updateBalanceAndStatus(Request $request, $id)
+{
+    //dd($request->all());
+    // Validate the request... validated
+    $validated = $request->validate([
+        'balance' => 'required|numeric',
+        'status' => 'required|in:pending,accept,reject',
+    ]);
+
+    // Begin a transaction
+    DB::beginTransaction();
+
+    try {
+        // Retrieve the fill balance record
+        $fillBalance = FillBalance::findOrFail($id);
+
+        // Update fill balance details
+        $fillBalance->amount = $validated['amount'];
+        $fillBalance->status = $validated['status'];
+        $fillBalance->save();
+
+        // Retrieve the associated user and update their balance
+        $user = User::findOrFail($fillBalance->user_id);
+        // Make sure to adjust the user's balance correctly depending on your logic
+        // This is just an example of adding the amount
+        $user->balance += $validated['amount'];
+        $user->save();
+
+        // Commit the transaction
+        DB::commit();
+
+        // Return a successful response
+        return response()->json(['message' => 'Balance and status updated successfully!'], 200);
+    } catch (\Exception $e) {
+        // An error occurred; rollback the transaction...
+        DB::rollback();
+
+        // Return an error response
+        return response()->json(['message' => $e->getMessage()], 500);
+    }
+}    
+//  public function update(Request $request, $id)
     // {
     //     // Validate the request
     //     $request->validate([

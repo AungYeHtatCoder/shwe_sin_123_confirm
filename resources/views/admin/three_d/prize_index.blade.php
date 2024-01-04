@@ -60,15 +60,15 @@
     <div class="col-6">
         <div class="card">
             <div class="card-header">
-                <h5>3D Prize Digit Create</h5>
+                <h5>3D ထွက်ဂဏန်းထဲ့ရန်</h5>
             </div>
             <form action="{{ route('admin.three-d-prize-number-create.store') }}" method="post">
                 @csrf
                 <div class="row">
                     <div class="col-12">
                         <div class="custom-form-group ms-3 mx-3">
-                            <label for="prize_no">Prize Number</label>
-                            <input type="text" name="prize_no" id="player_name" class="form-control" placeholder="First Prize Digit">
+                            <label for="prize_no">3D ထွက်ဂဏန်း</label>
+                            <input type="text" name="prize_no" id="player_name" class="form-control" placeholder="ထွက်ဂဏန်းထဲ့ပါ">
                         </div>
                         {{-- <input type="hidden" name="session" value="morning"> --}}
                     </div>
@@ -87,7 +87,7 @@
             <!-- Card header -->
             <div class="card-header pb-0">
                 <div>
-                    <h5 class="mb-0">3D Prize Digit Create Dashboards</h5>
+                    <h5 class="mb-0">3D ထွက်ဂဏန်း</h5>
                 </div>
                 <div class="d-lg-flex mt-2">
                     <div class="ms-auto my-auto mt-lg-0">

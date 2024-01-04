@@ -231,6 +231,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'App\Http\Co
     // kpay fill money get route
     Route::get('profile/kpay_fill_money', [ProfileController::class, 'index'])->name('kpay_fill_money');
     Route::resource('fill-balance-replies', FillBalanceReplyController::class);
+    Route::put('/fill-balance-replies-update/{id}', [App\Http\Controllers\Admin\FillBalanceReplyController::class, 'update'])->name('FillBalanceUpdate');
     Route::get('/daily-income-json', [App\Http\Controllers\Admin\DailyTwodIncomeOutComeController::class, 'getTotalAmounts'])->name('dailyIncomeJson');
     Route::get('/with-draw-view', [App\Http\Controllers\Admin\WithDrawViewController::class, 'index'])->name('withdrawViewGet');
     Route::get('/with-draw-details/{id}', [App\Http\Controllers\Admin\WithDrawViewController::class, 'show'])->name('withdrawViewDetails');

@@ -68,7 +68,7 @@ class FillBalanceController extends Controller
         $fillBalance->user_ph_no = $request->user_ph_no;
         $fillBalance->last_six_digit = $request->last_six_digit;
         $fillBalance->amount = $request->amount;
-        $fillBalance->status = 0;  // default to 'pending'
+        $fillBalance->status = 'pending';  // default to 'pending'
 
         $fillBalance->save();
         session()->flash('SuccessRequest', 'သင့်အကောင့်သို့ငွေဖြည့်ရန်တောင်းဆိုပြီးပါပီး .');
@@ -94,7 +94,7 @@ class FillBalanceController extends Controller
         $fillBalance->user_ph_no = $request->user_ph_no;
         $fillBalance->last_six_digit = $request->last_six_digit;
         $fillBalance->amount = $request->amount;
-        $fillBalance->status = 0;  // default to 'pending'
+        $fillBalance->status = 'pending';  // default to 'pending'
 
         $fillBalance->save();
         session()->flash('SuccessRequest', 'သင့်အကောင့်သို့ငွေဖြည့်ရန်တောင်းဆိုပြီးပါပီး .');
@@ -120,7 +120,7 @@ class FillBalanceController extends Controller
         $fillBalance->user_ph_no = $request->user_ph_no;
         $fillBalance->last_six_digit = $request->last_six_digit;
         $fillBalance->amount = $request->amount;
-        $fillBalance->status = 0;  // default to 'pending'
+        $fillBalance->status = 'pending';  // default to 'pending'
 
         $fillBalance->save();
         session()->flash('SuccessRequest', 'သင့်အကောင့်သို့ငွေဖြည့်ရန်တောင်းဆိုပြီးပါပီး .');
@@ -146,7 +146,7 @@ class FillBalanceController extends Controller
         $fillBalance->user_ph_no = $request->user_ph_no;
         $fillBalance->last_six_digit = $request->last_six_digit;
         $fillBalance->amount = $request->amount;
-        $fillBalance->status = 0;  // default to 'pending'
+        $fillBalance->status = 'pending';  // default to 'pending'
 
         $fillBalance->save();
         session()->flash('SuccessRequest', 'သင့်အကောင့်သို့ငွေဖြည့်ရန်တောင်းဆိုပြီးပါပီး .');

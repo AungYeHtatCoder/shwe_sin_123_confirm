@@ -22,7 +22,8 @@ return new class extends Migration
             $table->string('last_six_digit');
             $table->float('amount');
             // status 0 is pending, 1 is success, 2 is failed
-            $table->tinyInteger('status')->default(0);
+            //$table->tinyInteger('status')->default(0);
+            $table->enum('status', ['pending', 'accept', 'reject'])->default('pending');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });

@@ -61,7 +61,7 @@ class FillBalanceController extends Controller
         $fillBalance->user_id = Auth::id();
         $fillBalance->kpay_no = $request->kpay_no;
         $fillBalance->last_six_digit = $request->last_six_digit;
-        $fillBalance->status = 0;  // default to 'pending'
+        $fillBalance->status = 'pending';  // default to 'pending'
 
         $fillBalance->save();
 
@@ -82,7 +82,7 @@ class FillBalanceController extends Controller
         $fillBalance->user_id = Auth::id();
         $fillBalance->cbpay_no = $request->cbpay_no;
         $fillBalance->last_six_digit = $request->last_six_digit;
-        $fillBalance->status = 0;  // default to 'pending'
+        $fillBalance->status = 'pending';  // default to 'pending'
 
         $fillBalance->save();
 
@@ -103,7 +103,7 @@ class FillBalanceController extends Controller
         $fillBalance->user_id = Auth::id();
         $fillBalance->wavepay_no = $request->wavepay_no;
         $fillBalance->last_six_digit = $request->last_six_digit;
-        $fillBalance->status = 0;  // default to 'pending'
+        $fillBalance->status = 'pending';  // default to 'pending'
 
         $fillBalance->save();
 
@@ -124,7 +124,7 @@ class FillBalanceController extends Controller
         $fillBalance->user_id = Auth::id();
         $fillBalance->ayapay_no = $request->ayapay_no;
         $fillBalance->last_six_digit = $request->last_six_digit;
-        $fillBalance->status = 0;  // default to 'pending'
+        $fillBalance->status = 'pending';  // default to 'pending'
 
         $fillBalance->save();
 

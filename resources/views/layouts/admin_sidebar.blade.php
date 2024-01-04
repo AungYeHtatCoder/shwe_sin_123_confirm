@@ -101,27 +101,27 @@
             </a>
             <div class="collapse " id="profileExample">
               <ul class="nav nav-sm flex-column">
-                @can('user_access')
+                {{-- @can('user_access')
                 <li class="nav-item">
                   <a class="nav-link text-white " href="{{ route('admin.permissions.index')}}">
                     <span class="sidenav-mini-icon"> P </span>
                     <span class="sidenav-normal  ms-2  ps-1"> Permissions </span>
                   </a>
                 </li>
-                @endcan
-                @can('user_access')
+                @endcan --}}
+                {{-- @can('user_access')
                 <li class="nav-item">
                   <a class="nav-link text-white " href="{{ route('admin.roles.index') }}">
                     <span class="sidenav-mini-icon"> U R </span>
                     <span class="sidenav-normal  ms-2  ps-1"> User's Roles </span>
                   </a>
-                </li>
-                @endcan
+                </li> 
+                @endcan --}}
                 @can('user_access')
                 <li class="nav-item">
                   <a class="nav-link text-white " href="{{ route('admin.users.index')}}">
                     <span class="sidenav-mini-icon"> U </span>
-                    <span class="sidenav-normal  ms-2  ps-1"> Users </span>
+                    <span class="sidenav-normal  ms-2  ps-1"> ထိုးသားများထိန်းချုပ်ရန် </span>
                   </a>
                 </li>
                 @endcan
@@ -285,7 +285,7 @@
           <li class="nav-item ">
             <a class="nav-link text-white " href="{{ route('admin.two-d-users-index')}}">
               <span class="sidenav-mini-icon"> 2D | U </span>
-              <span class="sidenav-normal  ms-2  ps-1"> 2D Users </span>
+              <span class="sidenav-normal  ms-2  ps-1"> 2D ထိုးသားများ </span>
             </a>
           </li>
           @endcan
@@ -293,7 +293,7 @@
           <li class="nav-item ">
             <a class="nav-link text-white " href="{{ route('admin.twod-records.index')}}">
               <span class="sidenav-mini-icon"> 2D | H </span>
-              <span class="sidenav-normal  ms-2  ps-1"> 2D History </span>
+              <span class="sidenav-normal  ms-2  ps-1"> တလအတွင်းထိုးထားသောစာရင်း </span>
             </a>
           </li>
           @endcan
@@ -301,7 +301,7 @@
           <li class="nav-item ">
             <a class="nav-link text-white " href="{{ route('admin.tow-d-win-number.index') }}">
               <span class="sidenav-mini-icon"> K </span>
-              <span class="sidenav-normal  ms-2  ps-1"> 2D Prize No Create </span>
+              <span class="sidenav-normal  ms-2  ps-1"> 2D ပေါက်ဂဏန်းထဲ့ရန် </span>
             </a>
           </li>
           @endcan
@@ -373,7 +373,7 @@
           <li class="nav-item ">
             <a class="nav-link text-white " href="{{ route('admin.fill-balance-replies.index') }}">
               <span class="sidenav-mini-icon"> V </span>
-              <span class="sidenav-normal  ms-2  ps-1"> Balance Accept </span>
+              <span class="sidenav-normal  ms-2  ps-1"> ငွေးသွင်းစာရင်း </span>
             </a>
           </li>
           @endcan
@@ -381,7 +381,7 @@
           <li class="nav-item ">
             <a class="nav-link text-white " href="{{ route('admin.withdrawViewGet') }}">
               <span class="sidenav-mini-icon"> BW </span>
-              <span class="sidenav-normal  ms-2  ps-1"> Balance Withdraw </span>
+              <span class="sidenav-normal  ms-2  ps-1"> ငွေထုတ်စာရင်း </span>
             </a>
           </li>
           @endcan
@@ -389,7 +389,7 @@
            <li class="nav-item ">
             <a class="nav-link text-white " href="{{ route('admin.CloseTwoD') }}">
               <span class="sidenav-mini-icon"> C </span>
-              <span class="sidenav-normal  ms-2  ps-1"> CloseTwoD </span>
+              <span class="sidenav-normal  ms-2  ps-1"> 2D ပိတ်ရန် </span>
             </a>
           </li>
           @endcan
@@ -509,31 +509,31 @@
         <li class="nav-item">
          <a class="nav-link text-white " href="{{ url('admin/three-d-history')}}">
           <span class="sidenav-mini-icon"> 3D H </span>
-          <span class="sidenav-normal  ms-2  ps-1"> 3D History </span>
+          <span class="sidenav-normal  ms-2  ps-1"> 3D ထိုးထားသောစာရင်း </span>
          </a>
         </li>
         <li class="nav-item">
          <a class="nav-link text-white " href="{{ url('admin/threed-lotteries-match-time') }}">
           <span class="sidenav-mini-icon"> OD </span>
-          <span class="sidenav-normal  ms-2  ps-1"> OpeninDate </span>
+          <span class="sidenav-normal  ms-2  ps-1"> 3D ဖွင့်ရက် </span>
          </a>
         </li>
         <li class="nav-item">
          <a class="nav-link text-white " href="{{ url('/admin/three-d-prize-number-create') }}">
           <span class="sidenav-mini-icon"> 3D </span>
-          <span class="sidenav-normal  ms-2  ps-1"> PrizeNoCreate </span>
+          <span class="sidenav-normal  ms-2  ps-1"> 3D ပေါက်ဂဏန်းထဲ့ရန် </span>
          </a>
         </li>
         <li class="nav-item">
          <a class="nav-link text-white " href="{{ url('/admin/three-d-list-index') }}">
           <span class="sidenav-mini-icon"> 3D </span>
-          <span class="sidenav-normal  ms-2  ps-1">  List </span>
+          <span class="sidenav-normal  ms-2  ps-1">  3D တပါတ်အတွင်းထိုးထားသောစာရင်း </span>
          </a>
         </li>
         <li class="nav-item">
          <a class="nav-link text-white " href="{{ url('/admin/three-d-winner') }}">
           <span class="sidenav-mini-icon"> 3D </span>
-          <span class="sidenav-normal  ms-2  ps-1">  WinnerList </span>
+          <span class="sidenav-normal  ms-2  ps-1">  3D ပေါက်သူများစာရင်း </span>
          </a>
         </li>
        </ul>
